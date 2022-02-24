@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .btn{
+      border-radius: 5px;
+      width: 100px;
+      height: auto;
+    }
+    .btn-edit{
+        background-color: chartreuse;
+    }
+
+    .btn-delete{
+        background-color: red;
+    }
+    tr:hover {background-color: coral;}
+    </style>
+    </head>
+    <body>
+    
+    <h2>Hoverable Table</h2>
+    
+    <p>Move the mouse over the table rows to see the effect.</p>
+    <%dataTable=JSON.parse(data) %>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Actions</th>
+
+      </tr>
+      <% for(let i=0; i < dataTable.length; i++) { %>
+        <tr>
+          <td><%= dataTable[i].id %></td>
+          <td><%= dataTable[i].email %></td>
+          <td><%= dataTable[i].firstName %></td>
+          <td><%= dataTable[i].lastName %></td>
+          <td><%= dataTable[i].address %></td>
+          <td>
+            <a href="/edit-crud?id=<%=dataTable[i].id%>"><button type="button" class="btn btn-edit">Edit</button></a>
+            <a href="/delete-crud?id=<%=dataTable[i].id%>"><button type="button" class="btn btn-delete">Delete</button></a>
+
+          </td>
+
+        </tr>
+     <% } %>
+      
+    </table>
+    
+    </body>
+</html>
