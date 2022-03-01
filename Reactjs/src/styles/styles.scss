@@ -1,7 +1,7 @@
 @import "variables";
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
-$fa-font-path : "~@fortawesome/fontawesome-free-webfonts/webfonts";
+$fa-font-path: "~@fortawesome/fontawesome-free-webfonts/webfonts";
 @import "~@fortawesome/fontawesome-free-webfonts/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free-webfonts/scss/fa-solid.scss";
 @import "~@fortawesome/fontawesome-free-webfonts/scss/fa-regular.scss";
@@ -9,3 +9,28 @@ $fa-font-path : "~@fortawesome/fontawesome-free-webfonts/webfonts";
 
 @import "base";
 @import "form";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+  background: none;
+}
